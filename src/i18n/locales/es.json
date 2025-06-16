@@ -1,0 +1,237 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV"
+  },
+  "hero": {
+    "greeting": "¡Hola, soy",
+    "name": "Francisco!",
+    "role": "Desarrollador Full Stack MERN & Consultor IA",
+    "education": "Estudiante de Tecnicatura Universitaria en Programación - UTN",
+    "description1": "Me especializo en <strong class='font-semibold text-primary-600 dark:text-primary-400'>MongoDB, Express, React y Node.js</strong>, creando aplicaciones modernas y eficientes que marcan la diferencia.",
+    "description2": "También ayudo a empresas a <strong class='font-semibold text-accent-600 dark:text-accent-400'>automatizar procesos con IA</strong>, implementando soluciones inteligentes con n8n, chatbots y agentes personalizados.",
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contactar"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Transformando ideas en experiencias digitales excepcionales",
+    "role": "Desarrollador Full Stack & Consultor IA",
+    "description1": "apasionado por crear aplicaciones web que no solo funcionan perfectamente, sino que también integran soluciones inteligentes de automatización.",
+    "description2": "Mi enfoque combina <strong class='font-semibold text-primary-600 dark:text-primary-400'>creatividad técnica</strong> con <strong class='font-semibold text-accent-600 dark:text-accent-400'>inteligencia artificial</strong>, ayudando a empresas a optimizar sus procesos mediante automatizaciones inteligentes y bots personalizados.",
+    "location": "Ubicación:",
+    "locationValue": "Andorra",
+    "availability": "Disponible para trabajo remoto y presencial en Argentina",
+    "education": {
+      "degree": "Tecnicatura Universitaria en Programación",
+      "university": "Universidad Tecnológica Nacional (UTN)",
+      "status": "En curso - Formación continua en desarrollo de software"
+    },
+    "skills": {
+      "frontend": {
+        "title": "Frontend",
+        "skills": "React, JavaScript, TypeScript, Tailwind CSS, Framer Motion"
+      },
+      "backend": {
+        "title": "Backend",
+        "skills": "Node.js, Express, Python, MongoDB, MySQL, REST APIs"
+      },
+      "ai": {
+        "title": "IA & Automatización",
+        "skills": "n8n, ChatGPT, Claude API, Bots, Agentes IA"
+      },
+      "tools": {
+        "title": "Herramientas",
+        "skills": "Git, Docker, Linux, WordPress, Vite"
+      }
+    },
+    "stats": {
+      "experience": "Años de experiencia",
+      "projects": "Proyectos completados",
+      "clients": "Clientes satisfechos",
+      "learning": "Ganas de aprender"
+    },
+    "cta": {
+      "viewProjects": "Ver mis proyectos",
+      "viewExperience": "Mi experiencia"
+    }
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "subtitle": "Mi trayectoria profesional desarrollando soluciones web innovadoras",
+    "present": "actualidad",
+    "responsibilities": "Responsabilidades",
+    "technologies": "Tecnologías utilizadas",
+    "achievements": "Logros destacados",
+    "duration": {
+      "year": "año",
+      "year_plural": "años",
+      "month": "mes",
+      "month_plural": "meses"
+    },
+    "roles": {
+      "location": {
+        "remote": "Remoto"
+      },
+      "fullstack": {
+        "title": "Full Stack MERN Developer",
+        "company": "Profesional independiente",
+        "responsibilities": [
+          "Desarrollo de aplicaciones web modernas utilizando MongoDB, Express, React y Node.js.",
+          "Implementación de API RESTful y optimización del rendimiento del backend.",
+          "Colaboración con clientes para diseñar y desarrollar soluciones a medida.",
+          "Integración de servicios externos y APIs de terceros para ampliar funcionalidades."
+        ],
+        "achievements": [
+          "Reducción del tiempo de carga en un 40% mediante optimizaciones",
+          "Implementación exitosa de 5+ proyectos completos",
+          "Satisfacción del cliente del 100%"
+        ]
+      },
+      "aiConsultant": {
+        "title": "Consultor en Inteligencia Artificial",
+        "company": "Profesional independiente",
+        "skills": {
+          "automation": "Automatización"
+        },
+        "responsibilities": [
+          "Asesoramiento a empresas en la implementación de soluciones de IA para optimizar procesos.",
+          "Desarrollo de automatizaciones complejas utilizando n8n para flujos de trabajo empresariales.",
+          "Creación de chatbots inteligentes y agentes de IA personalizados para atención al cliente.",
+          "Integración de modelos de IA (GPT, Claude, etc.) en aplicaciones existentes."
+        ],
+        "achievements": [
+          "Automatización de procesos ahorrando 20+ horas semanales",
+          "Implementación de 10+ bots y agentes de IA",
+          "Mejora del 35% en eficiencia operativa"
+        ]
+      },
+      "wordpress": {
+        "title": "Desarrollador de WordPress",
+        "company": "Profesional independiente",
+        "responsibilities": [
+          "Creación y personalización de sitios web en WordPress con Elementor y otros plugins.",
+          "Optimización de velocidad y SEO para mejorar el rendimiento web.",
+          "Mantenimiento y soporte técnico para clientes.",
+          "Migración y actualización de sitios web existentes."
+        ],
+        "achievements": [
+          "Gestión de 10+ sitios web activos",
+          "Mejora del SEO resultando en +60% de tráfico orgánico",
+          "Tiempo de respuesta de soporte < 24 horas"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Una selección de mis trabajos más recientes y desafiantes",
+    "featured": "Destacado",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código",
+    "viewMoreGithub": "Ver más en GitHub",
+    "technologies": "Tecnologías utilizadas",
+    "allProjects": "Todos los proyectos",
+    "loadMore": "Cargar más",
+    "categories": {
+      "all": "Todos",
+      "webApps": "Aplicaciones Web",
+      "ecommerce": "E-commerce",
+      "automation": "Automatización",
+      "ai": "Inteligencia Artificial"
+    },
+    "items": {
+      "mozaik": {
+        "description": "Un sitio web moderno y dinámico desarrollado en React, con integración de Google Sheets para la gestión del menú en tiempo real. La API de Google Sheets permite a los propietarios actualizar los productos fácilmente sin necesidad de conocimientos técnicos."
+      },
+      "maj": {
+        "description": "Sitio web corporativo desarrollado con React y backend personalizado. Incluye integración con Google Analytics, píxeles de seguimiento y dashboard de métricas para análisis de rendimiento y visualización de datos en tiempo real."
+      },
+      "electroclau": {
+        "description": "Sitio web corporativo desarrollado desde cero para empresa del sector eléctrico. Diseño moderno y responsive que presenta servicios, información de contacto y portafolio de trabajos realizados de forma clara y profesional."
+      },
+      "ecommerce": {
+        "description": "Desarrollado en React, este proyecto es una tienda en línea de prueba con funciones como navegación, filtros y flujo de compra. Me ayudó a mejorar mis habilidades en React y frontend."
+      },
+      "llauretum": {
+        "description": "Es un sitio web que gestiono y mantengo actualmente, asegurando su correcto funcionamiento y actualizaciones periódicas. Me encargo de su administración, optimización y personalización."
+      }
+    }
+  },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Me encantaría escucharte!",
+    "letsWork": "Construyamos algo increíble juntos",
+    "lookingFor": "Siempre estoy buscando nuevos desafíos y oportunidades para crear soluciones innovadoras.",
+    "findMeOn": "También puedes encontrarme en:",
+    "call": "Llamar",
+    "fastResponse": "Respuesta rápida garantizada",
+    "responseDescription": "Normalmente respondo en menos de 24 horas",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Email",
+      "subject": "Asunto",
+      "message": "Tu Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "successMessage": "Gracias por contactarme. Te responderé lo antes posible.",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+      "placeholders": {
+        "name": "Francisco Goroso",
+        "email": "francisco@ejemplo.com",
+        "subject": "Proyecto de desarrollo web",
+        "message": "Hola Francisco, me gustaría hablar sobre..."
+      }
+    },
+    "info": {
+      "email": "Correo",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "availability": "Disponibilidad",
+      "response": "Tiempo de respuesta",
+      "responseTime": "24-48 horas",
+      "workingHours": "Lun - Vie, 9:00 - 18:00 (CET)",
+      "social": "Redes sociales"
+    },
+    "cta": {
+      "schedule": "Agendar una reunión",
+      "download": "Descargar CV"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por",
+    "navigation": "Navegación",
+    "social": "Redes",
+    "contact": "Contacto",
+    "quickLinks": "Enlaces rápidos",
+    "technologies": "Desarrollado con React, TypeScript y Tailwind CSS"
+  },
+  "common": {
+    "and": "y",
+    "or": "o",
+    "yes": "Sí",
+    "no": "No",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "more": "Más",
+    "less": "Menos",
+    "new": "Nuevo",
+    "featured": "Destacado",
+    "latest": "Último",
+    "all": "Todos"
+  }
+}

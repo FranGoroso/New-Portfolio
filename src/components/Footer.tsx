@@ -1,9 +1,11 @@
 import { Github, Linkedin, Mail, Heart, ArrowUp, Code2, Coffee } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -41,11 +43,20 @@ const Footer = () => {
   ];
 
   const footerLinks = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Experiencia", href: "#experience" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" }
+    { name: t('navbar.about'), href: "#about" },
+    { name: t('navbar.experience'), href: "#experience" },
+    { name: t('navbar.projects'), href: "#projects" },
+    { name: t('navbar.contact'), href: "#contact" }
   ];
+
+  const getDateLocale = () => {
+    const localeMap: { [key: string]: string } = {
+      'es': 'es-ES',
+      'en': 'en-US',
+      'ca': 'ca-ES'
+    };
+    return localeMap[i18n.language] || 'es-ES';
+  };
 
   return (
     <footer className="relative bg-white dark:bg-dark-950 border-t border-gray-200 dark:border-dark-800 transition-colors duration-300">
@@ -66,11 +77,11 @@ const Footer = () => {
               <h3 className="text-2xl font-bold gradient-text">Fran Goroso</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
-              Desarrollador Full Stack MERN creando experiencias web excepcionales
+              {t('hero.role')}
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
               <Coffee className="w-4 h-4" />
-              <span>Hecho con café y pasión</span>
+              <span>{t('footer.madeWith')} café {t('common.and')} pasión</span>
             </div>
           </motion.div>
 
@@ -81,7 +92,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-4"
           >
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">Enlaces rápidos</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
@@ -103,7 +114,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-4"
           >
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">Conectemos</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{t('footer.social')}</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -121,7 +132,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-500">
-              Respuesta en menos de 24 horas
+              {t('contact.info.responseTime')}
             </p>
           </motion.div>
         </div>
@@ -134,11 +145,11 @@ const Footer = () => {
           className="mt-12 pt-8 border-t border-gray-200 dark:border-dark-800 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-1">
-            © {currentYear} Fran Goroso. Hecho con 
+            © {currentYear} Fran Goroso. {t('footer.madeWith')} 
             <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
-              className="text-red-500"
+              className="text-red-500 mx-1"
             >
               <Heart className="w-4 h-4 inline" />
             </motion.span>
@@ -150,7 +161,7 @@ const Footer = () => {
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            {new Date().toLocaleDateString('es-ES', { 
+            {new Date().toLocaleDateString(getDateLocale(), { 
               weekday: 'long', 
               year: 'numeric', 
               month: 'long', 

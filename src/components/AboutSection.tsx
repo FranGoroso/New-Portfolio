@@ -1,42 +1,46 @@
 import { User, Code2, Database, Wrench, Cloud, Sparkles, Zap, Globe } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation, fadeIn, slideUp, scaleIn } from "../hooks/useScrollAnimation";
+import HighlightedText from "./HighlightedText";
+import perfilEditado from "../assets/perfil-editado.jpg";
 
 const AboutSection = () => {
   const { ref, isInView } = useScrollAnimation();
+  const { t } = useTranslation();
 
   const skills = [
     { 
-      title: "Frontend", 
-      skills: "React, JavaScript, TypeScript, Tailwind CSS, Framer Motion",
+      title: t('about.skills.frontend.title'), 
+      skills: t('about.skills.frontend.skills'),
       icon: Code2,
       color: "from-primary-400 to-primary-600"
     },
     { 
-      title: "Backend", 
-      skills: "Node.js, Express, Python, MongoDB, MySQL, REST APIs",
+      title: t('about.skills.backend.title'), 
+      skills: t('about.skills.backend.skills'),
       icon: Database,
       color: "from-secondary-400 to-secondary-600"
     },
     { 
-      title: "IA & Automatización", 
-      skills: "n8n, ChatGPT, Claude API, Bots, Agentes IA",
+      title: t('about.skills.ai.title'), 
+      skills: t('about.skills.ai.skills'),
       icon: Sparkles,
       color: "from-accent-400 to-accent-600"
     },
     { 
-      title: "Herramientas", 
-      skills: "Git, Docker, Linux, WordPress, Vite",
+      title: t('about.skills.tools.title'), 
+      skills: t('about.skills.tools.skills'),
       icon: Wrench,
       color: "from-neutral-400 to-neutral-600"
     }
   ];
 
   const stats = [
-    { number: "2+", label: "Años de experiencia" },
-    { number: "27+", label: "Proyectos completados" },
-    { number: "15+", label: "Clientes satisfechos" },
-    { number: "∞", label: "Ganas de aprender" }
+    { number: "2+", label: t('about.stats.experience') },
+    { number: "27+", label: t('about.stats.projects') },
+    { number: "15+", label: t('about.stats.clients') },
+    { number: "∞", label: t('about.stats.learning') }
   ];
 
   return (
@@ -58,10 +62,10 @@ const AboutSection = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-3">
               <User className="text-primary-600 dark:text-primary-400" size={40} />
-              <span className="gradient-text">Sobre mí</span>
+              <span className="gradient-text">{t('about.title')}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Transformando ideas en experiencias digitales excepcionales
+              {t('about.subtitle')}
             </p>
           </motion.div>
 
@@ -79,8 +83,8 @@ const AboutSection = () => {
                 
                 <div className="relative bg-white dark:bg-dark-800 rounded-3xl p-1">
                   <img 
-                    src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                    alt="Developer workspace"
+                    src={perfilEditado}
+                    alt="Francisco Goroso - Developer workspace"
                     className="rounded-3xl w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   
@@ -114,23 +118,21 @@ const AboutSection = () => {
               <div className="space-y-4">
                 <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                    Desarrollador Full Stack & Consultor IA
+                    {t('about.role')}
                   </span>{" "}
-                  apasionado por crear aplicaciones web que no solo funcionan perfectamente, 
-                  sino que también integran soluciones inteligentes de automatización.
+                  {t('about.description1')}
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Mi enfoque combina <span className="font-semibold text-primary-600 dark:text-primary-400">
-                  creatividad técnica</span> con <span className="font-semibold text-accent-600 dark:text-accent-400">
-                  inteligencia artificial</span>, ayudando a empresas a optimizar sus procesos mediante automatizaciones inteligentes y bots personalizados.
-                </p>
+                <HighlightedText 
+                  textKey="about.description2"
+                  className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+                />
                 <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-4 inline-flex items-center gap-3">
                   <Globe className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   <div>
-                    <span className="font-semibold text-gray-900 dark:text-gray-100">Ubicación:</span>
-                    <span className="ml-2 text-gray-700 dark:text-gray-300">Andorra</span>
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">{t('about.location')}</span>
+                    <span className="ml-2 text-gray-700 dark:text-gray-300">{t('about.locationValue')}</span>
                     <span className="mx-2 text-gray-400">•</span>
-                    <span className="text-primary-600 dark:text-primary-400 font-medium">Disponible para trabajo remoto y presencial en Argentina</span>
+                    <span className="text-primary-600 dark:text-primary-400 font-medium">{t('about.availability')}</span>
                   </div>
                 </div>
               </div>
@@ -146,10 +148,10 @@ const AboutSection = () => {
                   <span className="text-3xl">🎓</span>
                   <div>
                     <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-1">
-                      Tecnicatura Universitaria en Programación
+                      {t('about.education.degree')}
                     </h4>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium">Universidad Tecnológica Nacional (UTN)</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">En curso - Formación continua en desarrollo de software</p>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium">{t('about.education.university')}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{t('about.education.status')}</p>
                   </div>
                 </div>
               </motion.div>
@@ -199,7 +201,7 @@ const AboutSection = () => {
                   className="group relative px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Ver mis proyectos
+                    {t('about.cta.viewProjects')}
                     <span>→</span>
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -209,7 +211,7 @@ const AboutSection = () => {
                   href="#experience"
                   className="px-6 py-3 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300"
                 >
-                  Mi experiencia
+                  {t('about.cta.viewExperience')}
                 </a>
               </div>
             </motion.div>

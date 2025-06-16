@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { Menu, X, Download, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { scrollY } = useScroll();
+  const { t } = useTranslation();
   
   const navbarBackground = useTransform(
     scrollY,
@@ -38,10 +41,10 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const navItems = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Experiencia", href: "#experience" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" }
+    { name: t('navbar.about'), href: "#about" },
+    { name: t('navbar.experience'), href: "#experience" },
+    { name: t('navbar.projects'), href: "#projects" },
+    { name: t('navbar.contact'), href: "#contact" }
   ];
 
   return (
@@ -113,8 +116,11 @@ const Navbar = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3"
               >
+                {/* Language Selector */}
+                <LanguageSelector />
+                
                 {/* Theme Switcher */}
                 <motion.button
                   onClick={toggleTheme}
@@ -165,6 +171,8 @@ const Navbar = () => {
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center gap-3">
+              <LanguageSelector />
+              
               <motion.button
                 onClick={toggleTheme}
                 className="p-2.5 rounded-xl bg-neutral-100 dark:bg-dark-800"
@@ -276,7 +284,7 @@ const Navbar = () => {
                     className="block w-full py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white text-center rounded-xl font-medium shadow-lg transition-all duration-300"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Descargar CV
+                    {t('navbar.downloadCV') || 'Descargar CV'}
                   </a>
                 </motion.div>
               </div>

@@ -1,0 +1,237 @@
+{
+  "navbar": {
+    "home": "Inici",
+    "about": "Sobre mi",
+    "experience": "Experiència",
+    "projects": "Projectes",
+    "contact": "Contacte",
+    "downloadCV": "Descarregar CV"
+  },
+  "hero": {
+    "greeting": "Hola, sóc",
+    "name": "Francisco!",
+    "role": "Desenvolupador Full Stack MERN & Consultor IA",
+    "education": "Estudiant de Tecnicatura Universitària en Programació - UTN",
+    "description1": "M'especialitzo en <strong class='font-semibold text-primary-600 dark:text-primary-400'>MongoDB, Express, React i Node.js</strong>, creant aplicacions modernes i eficients que marquen la diferència.",
+    "description2": "També ajudo a empreses a <strong class='font-semibold text-accent-600 dark:text-accent-400'>automatitzar processos amb IA</strong>, implementant solucions intel·ligents amb n8n, chatbots i agents personalitzats.",
+    "cta": {
+      "projects": "Veure Projectes",
+      "contact": "Contactar"
+    }
+  },
+  "about": {
+    "title": "Sobre mi",
+    "subtitle": "Transformant idees en experiències digitals excepcionals",
+    "role": "Desenvolupador Full Stack & Consultor IA",
+    "description1": "apassionat per crear aplicacions web que no només funcionen perfectament, sinó que també integren solucions intel·ligents d'automatització.",
+    "description2": "El meu enfocament combina <span class='font-semibold text-primary-600 dark:text-primary-400'>creativitat tècnica</span> amb <span class='font-semibold text-accent-600 dark:text-accent-400'>intel·ligència artificial</span>, ajudant a empreses a optimitzar els seus processos mitjançant automatitzacions intel·ligents i bots personalitzats.",
+    "location": "Ubicació:",
+    "locationValue": "Andorra",
+    "availability": "Disponible per a treball remot i presencial a Argentina",
+    "education": {
+      "degree": "Tecnicatura Universitària en Programació",
+      "university": "Universitat Tecnològica Nacional (UTN)",
+      "status": "En curs - Formació contínua en desenvolupament de programari"
+    },
+    "skills": {
+      "frontend": {
+        "title": "Frontend",
+        "skills": "React, JavaScript, TypeScript, Tailwind CSS, Framer Motion"
+      },
+      "backend": {
+        "title": "Backend",
+        "skills": "Node.js, Express, Python, MongoDB, MySQL, REST APIs"
+      },
+      "ai": {
+        "title": "IA & Automatització",
+        "skills": "n8n, ChatGPT, Claude API, Bots, Agents IA"
+      },
+      "tools": {
+        "title": "Eines",
+        "skills": "Git, Docker, Linux, WordPress, Vite"
+      }
+    },
+    "stats": {
+      "experience": "Anys d'experiència",
+      "projects": "Projectes completats",
+      "clients": "Clients satisfets",
+      "learning": "Ganes d'aprendre"
+    },
+    "cta": {
+      "viewProjects": "Veure els meus projectes",
+      "viewExperience": "La meva experiència"
+    }
+  },
+  "experience": {
+    "title": "Experiència Laboral",
+    "subtitle": "La meva trajectòria professional desenvolupant solucions web innovadores",
+    "present": "actualitat",
+    "responsibilities": "Responsabilitats",
+    "technologies": "Tecnologies utilitzades",
+    "achievements": "Assoliments destacats",
+    "duration": {
+      "year": "any",
+      "year_plural": "anys",
+      "month": "mes",
+      "month_plural": "mesos"
+    },
+    "roles": {
+      "location": {
+        "remote": "Remot"
+      },
+      "fullstack": {
+        "title": "Full Stack MERN Developer",
+        "company": "Professional independent",
+        "responsibilities": [
+          "Desenvolupament d'aplicacions web modernes utilitzant MongoDB, Express, React i Node.js.",
+          "Implementació d'API RESTful i optimització del rendiment del backend.",
+          "Col·laboració amb clients per dissenyar i desenvolupar solucions a mida.",
+          "Integració de serveis externs i APIs de tercers per ampliar funcionalitats."
+        ],
+        "achievements": [
+          "Reducció del temps de càrrega en un 40% mitjançant optimitzacions",
+          "Implementació reeixida de 5+ projectes complets",
+          "Satisfacció del client del 100%"
+        ]
+      },
+      "aiConsultant": {
+        "title": "Consultor en Intel·ligència Artificial",
+        "company": "Professional independent",
+        "skills": {
+          "automation": "Automatització"
+        },
+        "responsibilities": [
+          "Assessorament a empreses en la implementació de solucions d'IA per optimitzar processos.",
+          "Desenvolupament d'automatitzacions complexes utilitzant n8n per a fluxos de treball empresarials.",
+          "Creació de chatbots intel·ligents i agents d'IA personalitzats per a atenció al client.",
+          "Integració de models d'IA (GPT, Claude, etc.) en aplicacions existents."
+        ],
+        "achievements": [
+          "Automatització de processos estalviant 20+ hores setmanals",
+          "Implementació de 10+ bots i agents d'IA",
+          "Millora del 35% en eficiència operativa"
+        ]
+      },
+      "wordpress": {
+        "title": "Desenvolupador de WordPress",
+        "company": "Professional independent",
+        "responsibilities": [
+          "Creació i personalització de llocs web en WordPress amb Elementor i altres plugins.",
+          "Optimització de velocitat i SEO per millorar el rendiment web.",
+          "Manteniment i suport tècnic per a clients.",
+          "Migració i actualització de llocs web existents."
+        ],
+        "achievements": [
+          "Gestió de 10+ llocs web actius",
+          "Millora del SEO resultant en +60% de trànsit orgànic",
+          "Temps de resposta de suport < 24 hores"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projectes Destacats",
+    "subtitle": "Una selecció dels meus treballs més recents i desafiants",
+    "featured": "Destacat",
+    "viewProject": "Veure Projecte",
+    "viewCode": "Veure Codi",
+    "viewMoreGithub": "Veure més a GitHub",
+    "technologies": "Tecnologies utilitzades",
+    "allProjects": "Tots els projectes",
+    "loadMore": "Carregar més",
+    "categories": {
+      "all": "Tots",
+      "webApps": "Aplicacions Web",
+      "ecommerce": "E-commerce",
+      "automation": "Automatització",
+      "ai": "Intel·ligència Artificial"
+    },
+    "items": {
+      "mozaik": {
+        "description": "Un lloc web modern i dinàmic desenvolupat en React, amb integració de Google Sheets per a la gestió del menú en temps real. L'API de Google Sheets permet als propietaris actualitzar els productes fàcilment sense necessitat de coneixements tècnics."
+      },
+      "maj": {
+        "description": "Lloc web corporatiu desenvolupat amb React i backend personalitzat. Inclou integració amb Google Analytics, píxels de seguiment i dashboard de mètriques per a anàlisi de rendiment i visualització de dades en temps real."
+      },
+      "electroclau": {
+        "description": "Lloc web corporatiu desenvolupat des de zero per a empresa del sector elèctric. Disseny modern i responsive que presenta serveis, informació de contacte i portafoli de treballs realitzats de forma clara i professional."
+      },
+      "ecommerce": {
+        "description": "Desenvolupat en React, aquest projecte és una botiga en línia de prova amb funcions com navegació, filtres i flux de compra. Em va ajudar a millorar les meves habilitats en React i frontend."
+      },
+      "llauretum": {
+        "description": "És un lloc web que gestiono i mantinc actualment, assegurant el seu correcte funcionament i actualitzacions periòdiques. M'encarrego de la seva administració, optimització i personalització."
+      }
+    }
+  },
+  "contact": {
+    "title": "Parlem",
+    "subtitle": "Tens un projecte en ment? M'encantaria escoltar-te!",
+    "letsWork": "Construïm alguna cosa increïble junts",
+    "lookingFor": "Sempre estic buscant nous reptes i oportunitats per crear solucions innovadores.",
+    "findMeOn": "També em pots trobar a:",
+    "call": "Trucar",
+    "fastResponse": "Resposta ràpida garantida",
+    "responseDescription": "Normalment responc en menys de 24 hores",
+    "form": {
+      "name": "El teu Nom",
+      "email": "El teu Email",
+      "subject": "Assumpte",
+      "message": "El teu Missatge",
+      "send": "Enviar Missatge",
+      "sending": "Enviant...",
+      "success": "Missatge enviat amb èxit!",
+      "successMessage": "Gràcies per contactar-me. Et respondré el més aviat possible.",
+      "error": "Alguna cosa ha anat malament. Si us plau, torna-ho a provar.",
+      "placeholders": {
+        "name": "Joan Garcia",
+        "email": "joan@exemple.com",
+        "subject": "Projecte de desenvolupament web",
+        "message": "Hola Francisco, m'agradaria parlar sobre..."
+      }
+    },
+    "info": {
+      "email": "Correu",
+      "phone": "Telèfon",
+      "location": "Ubicació",
+      "availability": "Disponibilitat",
+      "response": "Temps de resposta",
+      "responseTime": "24-48 hores",
+      "workingHours": "Dll - Dv, 9:00 - 18:00 (CET)",
+      "social": "Xarxes socials"
+    },
+    "cta": {
+      "schedule": "Programar una reunió",
+      "download": "Descarregar CV"
+    }
+  },
+  "footer": {
+    "rights": "Tots els drets reservats",
+    "madeWith": "Fet amb",
+    "by": "per",
+    "navigation": "Navegació",
+    "social": "Xarxes",
+    "contact": "Contacte",
+    "quickLinks": "Enllaços ràpids",
+    "technologies": "Desenvolupat amb React, TypeScript i Tailwind CSS"
+  },
+  "common": {
+    "and": "i",
+    "or": "o",
+    "yes": "Sí",
+    "no": "No",
+    "loading": "Carregant...",
+    "error": "Error",
+    "success": "Èxit",
+    "close": "Tancar",
+    "back": "Tornar",
+    "next": "Següent",
+    "previous": "Anterior",
+    "more": "Més",
+    "less": "Menys",
+    "new": "Nou",
+    "featured": "Destacat",
+    "latest": "Últim",
+    "all": "Tots"
+  }
+}

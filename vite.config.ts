@@ -8,4 +8,5 @@ export default defineConfig({
     host: true
   },
   publicDir: "public", // Asegura que los archivos estáticos se sirvan correctamente
+  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif', '**/*.svg']
 });

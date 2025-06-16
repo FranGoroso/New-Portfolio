@@ -1,0 +1,19 @@
+/* Estilos adicionales para asegurar los colores */
+
+/* Colores Primary */
+.text-highlight-primary {
+  color: #e5671a !important;
+}
+
+.dark .text-highlight-primary {
+  color: #f7a34e !important;
+}
+
+/* Colores Accent */
+.text-highlight-accent {
+  color: #f08517 !important;
+}
+
+.dark .text-highlight-accent {
+  color: #ffbb5c !important;
+}

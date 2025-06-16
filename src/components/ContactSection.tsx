@@ -3,12 +3,14 @@ import { useForm, ValidationError } from "@formspree/react";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import { Mail, User, MessageSquare, Send, Compass, AtSign, Calendar, Sparkles, Phone, Globe, Clock3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation, fadeIn, slideUp } from "../hooks/useScrollAnimation";
 
 const ContactForm = () => {
   const formKey = import.meta.env.VITE_FORM_KEY || "YOUR_FORMSPREE_FORM_ID";
   const [state, handleSubmit] = useForm(formKey);
   const { ref, isInView } = useScrollAnimation();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,9 +26,9 @@ const ContactForm = () => {
     if (state.succeeded) {
       Swal.fire({
         icon: "success",
-        title: "¡Mensaje enviado!",
-        text: "Gracias por contactarme. Te responderé lo antes posible.",
-        confirmButtonText: "Genial",
+        title: t('contact.form.success'),
+        text: t('contact.form.successMessage'),
+        confirmButtonText: "OK",
         confirmButtonColor: "#f47e20",
         background: document.documentElement.classList.contains('dark') ? '#1a1a1a' : '#ffffff',
         color: document.documentElement.classList.contains('dark') ? '#f5f5f3' : '#2a2a2a',
@@ -34,28 +36,28 @@ const ContactForm = () => {
         setFormData({ name: "", email: "", message: "" });
       });
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, t]);
 
   const contactInfo = [
     {
       icon: Compass,
-      title: "Ubicación Global",
+      title: t('contact.info.location'),
       content: "Encamp, Andorra",
-      description: "Disponible para trabajo remoto",
+      description: t('about.availability'),
       gradient: "from-primary-500 to-primary-700"
     },
     {
       icon: AtSign,
-      title: "Contacto Directo",
+      title: t('contact.info.email'),
       content: "contacto@frangoroso.com",
-      description: "Respuesta en 24 horas",
+      description: t('contact.info.responseTime'),
       gradient: "from-accent-500 to-accent-700"
     },
     {
       icon: Calendar,
-      title: "Disponibilidad",
-      content: "Lun - Vie",
-      description: "9:00 - 18:00 (CET)",
+      title: t('contact.info.availability'),
+      content: t('contact.info.workingHours'),
+      description: "",
       gradient: "from-secondary-500 to-secondary-700"
     }
   ];
@@ -79,10 +81,10 @@ const ContactForm = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
               <Mail className="text-primary-600 dark:text-primary-400" size={40} />
-              <span className="gradient-text">Contáctame</span>
+              <span className="gradient-text">{t('contact.title')}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              ¿Tienes un proyecto en mente? Me encantaría escucharte
+              {t('contact.subtitle')}
             </p>
           </motion.div>
 
@@ -96,10 +98,10 @@ const ContactForm = () => {
             >
               <div className="bg-white dark:bg-dark-800 rounded-3xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                  Construyamos algo increíble juntos
+                  {t('contact.letsWork')}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-8">
-                  Siempre estoy buscando nuevos desafíos y oportunidades para crear soluciones innovadoras.
+                  {t('contact.lookingFor')}
                 </p>
 
                 {/* Contact cards - New Style */}
@@ -119,7 +121,9 @@ const ContactForm = () => {
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">{info.title}</h4>
                           <p className="text-primary-600 dark:text-primary-400 font-medium">{info.content}</p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{info.description}</p>
+                          {info.description && (
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{info.description}</p>
+                          )}
                         </div>
                       </div>
                     </motion.div>
@@ -129,7 +133,7 @@ const ContactForm = () => {
                 {/* Additional contact methods */}
                 <div className="mt-8 pt-8 border-t border-gray-200 dark:border-dark-700">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                    También puedes encontrarme en:
+                    {t('contact.findMeOn')}
                   </h4>
                   <div className="flex gap-4">
                     <a
@@ -137,7 +141,7 @@ const ContactForm = () => {
                       className="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-dark-700 rounded-xl hover:bg-neutral-200 dark:hover:bg-dark-600 transition-colors"
                     >
                       <Phone className="w-4 h-4 text-neutral-600 dark:text-neutral-400" />
-                      <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Llamar</span>
+                      <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">{t('contact.call')}</span>
                     </a>
                     <a
                       href="https://frangoroso.com"
@@ -161,10 +165,10 @@ const ContactForm = () => {
                   <Clock3 className="w-8 h-8 text-primary-600 dark:text-primary-400" />
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-gray-100">
-                      Respuesta rápida garantizada
+                      {t('contact.fastResponse')}
                     </h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Normalmente respondo en menos de 24 horas
+                      {t('contact.responseDescription')}
                     </p>
                   </div>
                 </div>
@@ -187,7 +191,7 @@ const ContactForm = () => {
                   {/* Name field */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Nombre
+                      {t('contact.form.name')}
                     </label>
                     <div className="relative">
                       <User className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors ${
@@ -203,7 +207,7 @@ const ContactForm = () => {
                         onBlur={() => setFocusedField(null)}
                         required
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                        placeholder="Tu nombre completo"
+                        placeholder={t('contact.form.placeholders.name')}
                       />
                     </div>
                   </div>
@@ -211,7 +215,7 @@ const ContactForm = () => {
                   {/* Email field */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Correo electrónico
+                      {t('contact.form.email')}
                     </label>
                     <div className="relative">
                       <Mail className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors ${
@@ -227,16 +231,16 @@ const ContactForm = () => {
                         onBlur={() => setFocusedField(null)}
                         required
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                        placeholder="tu@email.com"
+                        placeholder={t('contact.form.placeholders.email')}
                       />
                     </div>
-                    <ValidationError prefix="Correo" field="email" errors={state.errors} />
+                    <ValidationError prefix={t('contact.form.email')} field="email" errors={state.errors} />
                   </div>
 
                   {/* Message field */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Mensaje
+                      {t('contact.form.message')}
                     </label>
                     <div className="relative">
                       <MessageSquare className={`absolute left-3 top-3 w-5 h-5 transition-colors ${
@@ -252,10 +256,10 @@ const ContactForm = () => {
                         required
                         rows={4}
                         className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
-                        placeholder="Cuéntame sobre tu proyecto..."
+                        placeholder={t('contact.form.placeholders.message')}
                       />
                     </div>
-                    <ValidationError prefix="Mensaje" field="message" errors={state.errors} />
+                    <ValidationError prefix={t('contact.form.message')} field="message" errors={state.errors} />
                   </div>
 
                   {/* Submit button */}
@@ -275,12 +279,12 @@ const ContactForm = () => {
                             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                             className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                           />
-                          Enviando...
+                          {t('contact.form.sending')}
                         </>
                       ) : (
                         <>
                           <Send className="w-5 h-5" />
-                          Enviar mensaje
+                          {t('contact.form.send')}
                         </>
                       )}
                     </span>

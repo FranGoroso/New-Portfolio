@@ -1,0 +1,237 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Francisco!",
+    "role": "Full Stack MERN Developer & AI Consultant",
+    "education": "University Technical Degree in Programming Student - UTN",
+    "description1": "I specialize in <strong class='font-semibold text-primary-600 dark:text-primary-400'>MongoDB, Express, React, and Node.js</strong>, creating modern and efficient applications that make a difference.",
+    "description2": "I also help companies <strong class='font-semibold text-accent-600 dark:text-accent-400'>automate processes with AI</strong>, implementing intelligent solutions with n8n, chatbots, and custom agents.",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Get in Touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Transforming ideas into exceptional digital experiences",
+    "role": "Full Stack Developer & AI Consultant",
+    "description1": "passionate about creating web applications that not only work perfectly but also integrate intelligent automation solutions.",
+    "description2": "My approach combines <span class='font-semibold text-primary-600 dark:text-primary-400'>technical creativity</span> with <span class='font-semibold text-accent-600 dark:text-accent-400'>artificial intelligence</span>, helping companies optimize their processes through intelligent automations and custom bots.",
+    "location": "Location:",
+    "locationValue": "Andorra",
+    "availability": "Available for remote work and on-site in Argentina",
+    "education": {
+      "degree": "University Technical Degree in Programming",
+      "university": "National Technological University (UTN)",
+      "status": "In progress - Continuous training in software development"
+    },
+    "skills": {
+      "frontend": {
+        "title": "Frontend",
+        "skills": "React, JavaScript, TypeScript, Tailwind CSS, Framer Motion"
+      },
+      "backend": {
+        "title": "Backend",
+        "skills": "Node.js, Express, Python, MongoDB, MySQL, REST APIs"
+      },
+      "ai": {
+        "title": "AI & Automation",
+        "skills": "n8n, ChatGPT, Claude API, Bots, AI Agents"
+      },
+      "tools": {
+        "title": "Tools",
+        "skills": "Git, Docker, Linux, WordPress, Vite"
+      }
+    },
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Projects completed",
+      "clients": "Happy clients",
+      "learning": "Desire to learn"
+    },
+    "cta": {
+      "viewProjects": "View my projects",
+      "viewExperience": "My experience"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey developing innovative web solutions",
+    "present": "present",
+    "responsibilities": "Responsibilities",
+    "technologies": "Technologies used",
+    "achievements": "Key achievements",
+    "duration": {
+      "year": "year",
+      "year_plural": "years",
+      "month": "month",
+      "month_plural": "months"
+    },
+    "roles": {
+      "location": {
+        "remote": "Remote"
+      },
+      "fullstack": {
+        "title": "Full Stack MERN Developer",
+        "company": "Freelance",
+        "responsibilities": [
+          "Development of modern web applications using MongoDB, Express, React and Node.js.",
+          "Implementation of RESTful APIs and backend performance optimization.",
+          "Collaboration with clients to design and develop custom solutions.",
+          "Integration of external services and third-party APIs to expand functionalities."
+        ],
+        "achievements": [
+          "40% reduction in loading time through optimizations",
+          "Successful implementation of 5+ complete projects",
+          "100% client satisfaction"
+        ]
+      },
+      "aiConsultant": {
+        "title": "Artificial Intelligence Consultant",
+        "company": "Freelance",
+        "skills": {
+          "automation": "Automation"
+        },
+        "responsibilities": [
+          "Advising companies on implementing AI solutions to optimize processes.",
+          "Development of complex automations using n8n for business workflows.",
+          "Creation of intelligent chatbots and custom AI agents for customer service.",
+          "Integration of AI models (GPT, Claude, etc.) into existing applications."
+        ],
+        "achievements": [
+          "Process automation saving 20+ hours weekly",
+          "Implementation of 10+ bots and AI agents",
+          "35% improvement in operational efficiency"
+        ]
+      },
+      "wordpress": {
+        "title": "WordPress Developer",
+        "company": "Freelance",
+        "responsibilities": [
+          "Creation and customization of WordPress websites with Elementor and other plugins.",
+          "Speed and SEO optimization to improve web performance.",
+          "Maintenance and technical support for clients.",
+          "Migration and updating of existing websites."
+        ],
+        "achievements": [
+          "Management of 10+ active websites",
+          "SEO improvement resulting in +60% organic traffic",
+          "Support response time < 24 hours"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my most recent and challenging work",
+    "featured": "Featured",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "viewMoreGithub": "View more on GitHub",
+    "technologies": "Technologies used",
+    "allProjects": "All projects",
+    "loadMore": "Load more",
+    "categories": {
+      "all": "All",
+      "webApps": "Web Applications",
+      "ecommerce": "E-commerce",
+      "automation": "Automation",
+      "ai": "Artificial Intelligence"
+    },
+    "items": {
+      "mozaik": {
+        "description": "A modern and dynamic website developed in React, with Google Sheets integration for real-time menu management. The Google Sheets API allows owners to easily update products without technical knowledge."
+      },
+      "maj": {
+        "description": "Corporate website developed with React and custom backend. Includes integration with Google Analytics, tracking pixels, and metrics dashboard for performance analysis and real-time data visualization."
+      },
+      "electroclau": {
+        "description": "Corporate website developed from scratch for an electrical sector company. Modern and responsive design that presents services, contact information, and portfolio of completed work clearly and professionally."
+      },
+      "ecommerce": {
+        "description": "Developed in React, this project is a test online store with features like navigation, filters, and purchase flow. It helped me improve my React and frontend skills."
+      },
+      "llauretum": {
+        "description": "It is a website that I currently manage and maintain, ensuring its proper functioning and periodic updates. I handle its administration, optimization, and customization."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Have a project in mind? I'd love to hear from you!",
+    "letsWork": "Let's build something amazing together",
+    "lookingFor": "I'm always looking for new challenges and opportunities to create innovative solutions.",
+    "findMeOn": "You can also find me on:",
+    "call": "Call",
+    "fastResponse": "Fast response guaranteed",
+    "responseDescription": "I usually respond in less than 24 hours",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "successMessage": "Thanks for reaching out. I'll get back to you as soon as possible.",
+      "error": "Something went wrong. Please try again.",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "Web development project",
+        "message": "Hi Francisco, I'd like to talk about..."
+      }
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "availability": "Availability",
+      "response": "Response time",
+      "responseTime": "24-48 hours",
+      "workingHours": "Mon - Fri, 9:00 AM - 6:00 PM (CET)",
+      "social": "Social media"
+    },
+    "cta": {
+      "schedule": "Schedule a meeting",
+      "download": "Download CV"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by",
+    "navigation": "Navigation",
+    "social": "Social",
+    "contact": "Contact",
+    "quickLinks": "Quick links",
+    "technologies": "Built with React, TypeScript and Tailwind CSS"
+  },
+  "common": {
+    "and": "and",
+    "or": "or",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "more": "More",
+    "less": "Less",
+    "new": "New",
+    "featured": "Featured",
+    "latest": "Latest",
+    "all": "All"
+  }
+}

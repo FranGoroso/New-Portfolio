@@ -1,9 +1,10 @@
 import { Briefcase, Calendar, MapPin, CheckCircle, TrendingUp, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useScrollAnimation, fadeIn, slideUp, slideLeft, slideRight } from "../hooks/useScrollAnimation";
 
 // Función para calcular la duración
-const calculateDuration = (startDate: string, endDate: string | null = null) => {
+const calculateDuration = (startDate: string, endDate: string | null = null, t: any) => {
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : new Date();
   
@@ -11,83 +12,87 @@ const calculateDuration = (startDate: string, endDate: string | null = null) => 
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
   
+  const yearText = years === 1 ? t('experience.duration.year') : t('experience.duration.year_plural');
+  const monthText = remainingMonths === 1 ? t('experience.duration.month') : t('experience.duration.month_plural');
+  
   if (years > 0 && remainingMonths > 0) {
-    return `${years} año${years > 1 ? 's' : ''} ${remainingMonths} mes${remainingMonths > 1 ? 'es' : ''}`;
+    return `${years} ${yearText} ${remainingMonths} ${monthText}`;
   } else if (years > 0) {
-    return `${years} año${years > 1 ? 's' : ''}`;
+    return `${years} ${yearText}`;
   } else {
-    return `${remainingMonths} mes${remainingMonths > 1 ? 'es' : ''}`;
+    return `${remainingMonths} ${monthText}`;
   }
 };
 
-const experiences = [
+const getExperiences = (t: any) => [
   {
-    title: "Full Stack MERN Developer",
-    company: "Profesional independiente",
-    location: "Remoto",
+    title: t('experience.roles.fullstack.title'),
+    company: t('experience.roles.fullstack.company'),
+    location: t('experience.roles.location.remote'),
     startDate: "2024-10-01",
-    endDate: null, // null significa "actualidad"
+    endDate: null,
     responsibilities: [
-      "Desarrollo de aplicaciones web modernas utilizando MongoDB, Express, React y Node.js.",
-      "Implementación de API RESTful y optimización del rendimiento del backend.",
-      "Colaboración con clientes para diseñar y desarrollar soluciones a medida.",
-      "Integración de servicios externos y APIs de terceros para ampliar funcionalidades."
+      t('experience.roles.fullstack.responsibilities.0'),
+      t('experience.roles.fullstack.responsibilities.1'),
+      t('experience.roles.fullstack.responsibilities.2'),
+      t('experience.roles.fullstack.responsibilities.3')
     ],
     skills: ["React", "Node.js", "MongoDB", "Express", "API REST", "JavaScript"],
     achievements: [
-      "Reducción del tiempo de carga en un 40% mediante optimizaciones",
-      "Implementación exitosa de 5+ proyectos completos",
-      "Satisfacción del cliente del 100%"
+      t('experience.roles.fullstack.achievements.0'),
+      t('experience.roles.fullstack.achievements.1'),
+      t('experience.roles.fullstack.achievements.2')
     ]
   },
   {
-    title: "Consultor en Inteligencia Artificial",
-    company: "Profesional independiente",
-    location: "Remoto",
+    title: t('experience.roles.aiConsultant.title'),
+    company: t('experience.roles.aiConsultant.company'),
+    location: t('experience.roles.location.remote'),
     startDate: "2024-07-01",
     endDate: null,
     responsibilities: [
-      "Asesoramiento a empresas en la implementación de soluciones de IA para optimizar procesos.",
-      "Desarrollo de automatizaciones complejas utilizando n8n para flujos de trabajo empresariales.",
-      "Creación de chatbots inteligentes y agentes de IA personalizados para atención al cliente.",
-      "Integración de modelos de IA (GPT, Claude, etc.) en aplicaciones existentes."
+      t('experience.roles.aiConsultant.responsibilities.0'),
+      t('experience.roles.aiConsultant.responsibilities.1'),
+      t('experience.roles.aiConsultant.responsibilities.2'),
+      t('experience.roles.aiConsultant.responsibilities.3')
     ],
-    skills: ["n8n", "ChatGPT API", "Claude API", "Python", "Automatización", "Prompt Engineering"],
+    skills: ["n8n", "ChatGPT API", "Claude API", "Python", t('experience.roles.aiConsultant.skills.automation'), "Prompt Engineering"],
     achievements: [
-      "Automatización de procesos ahorrando 20+ horas semanales",
-      "Implementación de 10+ bots y agentes de IA",
-      "Mejora del 35% en eficiencia operativa"
+      t('experience.roles.aiConsultant.achievements.0'),
+      t('experience.roles.aiConsultant.achievements.1'),
+      t('experience.roles.aiConsultant.achievements.2')
     ]
   },
   {
-    title: "Desarrollador de WordPress",
-    company: "Profesional independiente",
-    location: "Remoto",
+    title: t('experience.roles.wordpress.title'),
+    company: t('experience.roles.wordpress.company'),
+    location: t('experience.roles.location.remote'),
     startDate: "2023-11-01",
     endDate: null,
     responsibilities: [
-      "Creación y personalización de sitios web en WordPress con Elementor y otros plugins.",
-      "Optimización de velocidad y SEO para mejorar el rendimiento web.",
-      "Mantenimiento y soporte técnico para clientes.",
-      "Migración y actualización de sitios web existentes."
+      t('experience.roles.wordpress.responsibilities.0'),
+      t('experience.roles.wordpress.responsibilities.1'),
+      t('experience.roles.wordpress.responsibilities.2'),
+      t('experience.roles.wordpress.responsibilities.3')
     ],
     skills: ["WordPress", "Elementor", "SEO", "HTML/CSS", "JavaScript", "PHP"],
     achievements: [
-      "Gestión de 10+ sitios web activos",
-      "Mejora del SEO resultando en +60% de tráfico orgánico",
-      "Tiempo de respuesta de soporte < 24 horas"
+      t('experience.roles.wordpress.achievements.0'),
+      t('experience.roles.wordpress.achievements.1'),
+      t('experience.roles.wordpress.achievements.2')
     ]
   },
 ];
 
-const TimelineItem = ({ experience, index }: { experience: typeof experiences[0], index: number }) => {
+const TimelineItem = ({ experience, index, t, i18n }: { experience: any, index: number, t: any, i18n: any }) => {
   const isEven = index % 2 === 0;
   
   // Formatear fechas
   const startDate = new Date(experience.startDate);
-  const formattedStartDate = startDate.toLocaleDateString('es-ES', { month: 'short', year: 'numeric' });
-  const period = `${formattedStartDate} - ${experience.endDate ? new Date(experience.endDate).toLocaleDateString('es-ES', { month: 'short', year: 'numeric' }) : 'actualidad'}`;
-  const duration = calculateDuration(experience.startDate, experience.endDate);
+  const locale = i18n.language === 'ca' ? 'ca-ES' : i18n.language === 'en' ? 'en-US' : 'es-ES';
+  const formattedStartDate = startDate.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+  const period = `${formattedStartDate} - ${experience.endDate ? new Date(experience.endDate).toLocaleDateString(locale, { month: 'short', year: 'numeric' }) : t('experience.present')}`;
+  const duration = calculateDuration(experience.startDate, experience.endDate, t);
   
   return (
     <motion.div
@@ -132,9 +137,9 @@ const TimelineItem = ({ experience, index }: { experience: typeof experiences[0]
           
           {/* Responsibilities */}
           <div className="space-y-3 mb-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">Responsabilidades:</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{t('experience.responsibilities')}:</h4>
             <ul className="space-y-2">
-              {experience.responsibilities.map((item, i) => (
+              {experience.responsibilities.map((item: string, i: number) => (
                 <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
@@ -151,9 +156,9 @@ const TimelineItem = ({ experience, index }: { experience: typeof experiences[0]
           
           {/* Skills */}
           <div className="space-y-3 mb-6">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">Tecnologías utilizadas:</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{t('experience.technologies')}:</h4>
             <div className="flex flex-wrap gap-2">
-              {experience.skills.map((skill, i) => (
+              {experience.skills.map((skill: string, i: number) => (
                 <motion.span
                   key={i}
                   initial={{ opacity: 0, scale: 0 }}
@@ -170,9 +175,9 @@ const TimelineItem = ({ experience, index }: { experience: typeof experiences[0]
           
           {/* Achievements */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">Logros destacados:</h4>
+            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{t('experience.achievements')}:</h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {experience.achievements.map((achievement, i) => (
+              {experience.achievements.map((achievement: string, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -210,6 +215,8 @@ const TimelineItem = ({ experience, index }: { experience: typeof experiences[0]
 
 const ExperienceSection = () => {
   const { ref, isInView } = useScrollAnimation();
+  const { t, i18n } = useTranslation();
+  const experiences = getExperiences(t);
 
   return (
     <section id="experience" className="py-20 bg-white dark:bg-dark-950 transition-colors duration-300 relative overflow-hidden">
@@ -229,10 +236,10 @@ const ExperienceSection = () => {
           <motion.div {...fadeIn} initial="initial" animate={isInView ? "animate" : "initial"} className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
               <Briefcase className="text-primary-600 dark:text-primary-400" size={40} />
-              <span className="gradient-text">Experiencia Laboral</span>
+              <span className="gradient-text">{t('experience.title')}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Mi trayectoria profesional desarrollando soluciones web innovadoras
+              {t('experience.subtitle')}
             </p>
           </motion.div>
 
@@ -244,7 +251,7 @@ const ExperienceSection = () => {
             {/* Experience items */}
             <div className="space-y-16">
               {experiences.map((experience, index) => (
-                <TimelineItem key={index} experience={experience} index={index} />
+                <TimelineItem key={index} experience={experience} index={index} t={t} i18n={i18n} />
               ))}
             </div>
           </div>
@@ -262,7 +269,7 @@ const ExperienceSection = () => {
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
             >
               <Briefcase className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-              Descargar CV Completo
+              {t('navbar.downloadCV')}
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

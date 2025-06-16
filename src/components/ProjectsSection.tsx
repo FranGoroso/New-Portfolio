@@ -1,6 +1,7 @@
 import { Code, ExternalLink, Github, Sparkles, ArrowUpRight, Folder } from "lucide-react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ecommerceImage from "../assets/captura-inicio-react-ecommerce.png";
 import electroclauImage from "../assets/electroclau.png";
 import llauretumImage from "../assets/llauretum.png";
@@ -8,11 +9,10 @@ import majdigitalImage from "../assets/majdigitalstrategies.png";
 import mozaikImage from "../assets/mozaik.png";
 import { useScrollAnimation, fadeIn, slideUp } from "../hooks/useScrollAnimation";
 
-const projects = [
+const getProjects = (t: any) => [
   {
     title: "Mozaik Bakery",
-    description:
-      "Un sitio web moderno y dinámico desarrollado en React, con integración de Google Sheets para la gestión del menú en tiempo real. La API de Google Sheets permite a los propietarios actualizar los productos fácilmente sin necesidad de conocimientos técnicos.",
+    description: t('projects.items.mozaik.description'),
     technologies: ["React", "Google Sheets API", "Tailwind CSS", "JavaScript"],
     link: "https://mozaikbakery.com",
     image: mozaikImage,
@@ -21,8 +21,7 @@ const projects = [
   },
   {
     title: "MAJ Digital Strategies",
-    description:
-      "Sitio web corporativo desarrollado con React y backend personalizado. Incluye integración con Google Analytics, píxeles de seguimiento y dashboard de métricas para análisis de rendimiento y visualización de datos en tiempo real.",
+    description: t('projects.items.maj.description'),
     technologies: ["React", "Node.js", "Analytics", "Píxeles", "Charts.js"],
     link: "https://majdigitalstrategies.com/",
     image: majdigitalImage,
@@ -31,8 +30,7 @@ const projects = [
   },
   {
     title: "ElectroClau",
-    description:
-      "Sitio web corporativo desarrollado desde cero para empresa del sector eléctrico. Diseño moderno y responsive que presenta servicios, información de contacto y portafolio de trabajos realizados de forma clara y profesional.",
+    description: t('projects.items.electroclau.description'),
     technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Design"],
     link: "https://electroclau.com/",
     image: electroclauImage,
@@ -40,8 +38,7 @@ const projects = [
   },
   {
     title: "E-commerce React",
-    description:
-      "Desarrollado en React, este proyecto es una tienda en línea de prueba con funciones como navegación, filtros y flujo de compra. Me ayudó a mejorar mis habilidades en React y frontend.",
+    description: t('projects.items.ecommerce.description'),
     technologies: ["React", "Firebase", "Bootstrap", "HTML", "CSS"],
     link: "https://proyect-react-cm-65120.vercel.app/",
     image: ecommerceImage,
@@ -49,8 +46,7 @@ const projects = [
   },
   {
     title: "Llauretum",
-    description:
-      "Es un sitio web que gestiono y mantengo actualmente, asegurando su correcto funcionamiento y actualizaciones periódicas. Me encargo de su administración, optimización y personalización.",
+    description: t('projects.items.llauretum.description'),
     technologies: ["WordPress", "HTML", "CSS", "JavaScript"],
     link: "https://llauretum.es/",
     image: llauretumImage,
@@ -58,9 +54,7 @@ const projects = [
   },
 ];
 
-const categories = ["Todos", "Frontend", "Full Stack", "CMS"];
-
-const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
+const ProjectCard = ({ project, index, t }: { project: any, index: number, t: any }) => {
   const [isHovered, setIsHovered] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -106,7 +100,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
       {project.featured && (
         <div className="absolute top-4 right-4 z-20 px-3 py-1 bg-gradient-to-r from-primary-600 to-accent-500 text-white text-sm font-semibold rounded-full flex items-center gap-1">
           <Sparkles className="w-4 h-4" />
-          Destacado
+          {t('projects.featured')}
         </div>
       )}
       
@@ -157,7 +151,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
         
         {/* Technologies */}
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, i) => (
+          {project.technologies.map((tech: string, i: number) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, scale: 0 }}
@@ -178,7 +172,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
           className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold group/link"
           whileHover={{ x: 5 }}
         >
-          Ver Proyecto
+          {t('projects.viewProject')}
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
         </motion.a>
       </div>
@@ -188,9 +182,19 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
 
 const ProjectsSection = () => {
   const { ref, isInView } = useScrollAnimation();
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState(t('projects.categories.all'));
   
-  const filteredProjects = selectedCategory === "Todos" 
+  const categories = [
+    t('projects.categories.all'),
+    "Frontend",
+    "Full Stack",
+    "CMS"
+  ];
+  
+  const projects = getProjects(t);
+  
+  const filteredProjects = selectedCategory === t('projects.categories.all') 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
@@ -211,10 +215,10 @@ const ProjectsSection = () => {
           <motion.div {...fadeIn} initial="initial" animate={isInView ? "animate" : "initial"} className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
               <Code className="text-primary-600 dark:text-primary-400" size={40} />
-              <span className="gradient-text">Proyectos Destacados</span>
+              <span className="gradient-text">{t('projects.title')}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Una selección de mis trabajos más recientes y desafiantes
+              {t('projects.subtitle')}
             </p>
           </motion.div>
 
@@ -248,7 +252,7 @@ const ProjectsSection = () => {
             className="grid md:grid-cols-2 gap-8"
           >
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
+              <ProjectCard key={project.title} project={project} index={index} t={t} />
             ))}
           </motion.div>
 
@@ -266,7 +270,7 @@ const ProjectsSection = () => {
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 group"
             >
               <Github className="w-5 h-5" />
-              Ver más en GitHub
+              {t('projects.viewMoreGithub')}
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </motion.div>

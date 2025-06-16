@@ -1,10 +1,13 @@
 import { Github, Linkedin, Mail, Download, Code, Sparkles, Terminal } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import fotoPerfil from "../assets/foto_perfil_fran.jpg";
+import HighlightedText from "./HighlightedText";
 
 const HeroSection = () => {
   const ref = useRef(null);
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -131,8 +134,8 @@ const HeroSection = () => {
                 custom={0}
                 variants={textVariants}
               >
-                <span className="text-gray-900 dark:text-white">¡Hola, soy </span>
-                <span className="gradient-text">Francisco!</span>
+                <span className="text-gray-900 dark:text-white">{t('hero.greeting')} </span>
+                <span className="gradient-text">{t('hero.name')}</span>
               </motion.h1>
               
               <motion.h2 
@@ -140,7 +143,7 @@ const HeroSection = () => {
                 custom={1}
                 variants={textVariants}
               >
-                Desarrollador Full Stack MERN & Consultor IA
+                {t('hero.role')}
               </motion.h2>
               
               <motion.p
@@ -149,7 +152,7 @@ const HeroSection = () => {
                 variants={textVariants}
               >
                 <span className="text-2xl">🎓</span>
-                Estudiante de Tecnicatura Universitaria en Programación - UTN
+                {t('hero.education')}
               </motion.p>
               
               <motion.div
@@ -157,19 +160,19 @@ const HeroSection = () => {
                 variants={textVariants}
                 className="space-y-4"
               >
-                <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Me especializo en <span className="font-semibold text-primary-600 dark:text-primary-400">MongoDB, Express, React y Node.js</span>, 
-                  creando aplicaciones modernas y eficientes que marcan la diferencia.
-                </p>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
-                  También ayudo a empresas a <span className="font-semibold text-accent-600 dark:text-accent-400">automatizar procesos con IA</span>, 
-                  implementando soluciones inteligentes con n8n, chatbots y agentes personalizados.
-                </p>
+                <HighlightedText 
+                  textKey="hero.description1"
+                  className="text-lg text-gray-600 dark:text-gray-400"
+                />
+                <HighlightedText 
+                  textKey="hero.description2"
+                  className="text-lg text-gray-600 dark:text-gray-400"
+                />
               </motion.div>
 
               {/* Iconos Sociales mejorados */}
               <motion.div 
-              className="flex justify-center md:justify-start gap-6 py-6"
+              className="flex justify-center md:justify-start gap-6 py-6 relative z-20"
               initial="hidden"
               animate="visible"
               >
@@ -239,7 +242,7 @@ const HeroSection = () => {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-accent-500 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Download className="w-5 h-5 relative z-10" />
-                  <span className="relative z-10">Descargar CV</span>
+                  <span className="relative z-10">{t('navbar.downloadCV')}</span>
                 </motion.a>
                 
                 <motion.a
@@ -250,7 +253,7 @@ const HeroSection = () => {
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   <Mail className="w-5 h-5 relative z-10" />
-                  <span className="relative z-10">Contactar</span>
+                  <span className="relative z-10">{t('hero.cta.contact')}</span>
                 </motion.a>
               </motion.div>
             </motion.div>
